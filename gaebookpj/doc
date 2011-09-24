@@ -1,0 +1,17 @@
+models.py         数据库ORM声明 ==数据建表
+
+
+main.py        程序的入口 
+
+
+filter.py  过滤方法 直接传入网页的HTML代码 获得需要的数据
+
+
+fetch.py   捕获网页并进行优化的代码
+
+cache.py  缓存类进行缓存操作。
+
+fetch.py 进行捕获网页
+
+common.py 通用类的处理
+

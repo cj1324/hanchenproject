@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*重置样式*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, button{padding:0;margin:0;}
+body{background:#FFF;font:12px Arial,"宋体" sans-serif;color:#666;background:url(../images/bj.png) repeat-x 0 -304px;text-align:center;}
+fieldset, img{border:0;}
+input, label, select, option, textarea, button, fieldset, legend{font:12px/18px Verdana, Simsun, Helvetica, Arial, sans-serif;/*表单中的字体属性与表单以外的不一致，需要单独定义*/}
+ul,li{list-style-type:none;}
+img{display:block;}
+*{ font-size:12px;}
+
+/*设置常用样式,定义页面中常重复使用的一些样式，可以观察设计稿来确定*/
+.dis{ display:none} /*隐藏*/
+.left{ float:left} /*左浮动*/
+.right{ float:right} /*右浮动*/
+.clear{ clear:both} /*清除浮动*/
+.red{color:#cd0000;} /*红色文字*/
+.boder1px{ border:1px solid #e4e4e4} /*1像素边框*/
+.position_rel{ position:relative} /*相对定位*/
+del{ font-family:georgia}/*删除线样式字体，用在商品价格*/
+
+/*区块与区块间隔调用样式*/
+.blank6 {clear:both; height:6px; overflow:hidden; display:block;}
+.blank7 {clear:both; height:7px; overflow:hidden; display:block;}
+.blank9{clear:both; height:9px; overflow:hidden; display:block;}
+.blank10{clear:both; height:10px; overflow:hidden; display:block;}
+.blank15{clear:both; height:15px; overflow:hidden; display:block;}
+.blank12 {clear:both;height:12px;overflow:hidden;display:block;}
+.blank20 {clear:both; height:20px; overflow:hidden; display:block;}
+
+/*默认文字链接样式*/
+a{color:#666;text-decoration:none;}
+a:hover{color:#D43601;text-decoration:none;}
+
+/*设计主色调为橙红*/
+.main-hot{color:#EB6204;}
+.main-hot a{text-decoration:none;color:#EB6204;}  
+.main-hot a:hover{color:#EB6204;text-decoration:none;}
+
+
+h3{font-size:14px;}
+h4{font-size:12px;}

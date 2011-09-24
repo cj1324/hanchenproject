@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{896AE235-C793-47C2-BE92-76D60A7D8CA5}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcGuessWeb</RootNamespace>
+    <AssemblyName>MvcGuessWeb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\CommControlController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\csshover.htc" />
+    <Content Include="Content\css\global.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\home\pro1.gif" />
+    <Content Include="Content\home\pro2.gif" />
+    <Content Include="Content\home\pro3.gif" />
+    <Content Include="Content\home\pro4.gif" />
+    <Content Include="Content\home\pro5.gif" />
+    <Content Include="Content\home\pro6.gif" />
+    <Content Include="Content\home\pro7.gif" />
+    <Content Include="Content\images\banner.jpg" />
+    <Content Include="Content\images\bj.png" />
+    <Content Include="Content\images\checkcode.jpg" />
+    <Content Include="Content\images\cop.gif" />
+    <Content Include="Content\images\copbj.gif" />
+    <Content Include="Content\images\Default.css" />
+    <Content Include="Content\images\fire.png" />
+    <Content Include="Content\images\homebj.png" />
+    <Content Include="Content\images\jt.png" />
+    <Content Include="Content\images\jt2.png" />
+    <Content Include="Content\images\jta.png" />
+    <Content Include="Content\images\line1.png" />
+    <Content Include="Content\images\line2.png" />
+    <Content Include="Content\images\line3.gif" />
+    <Content Include="Content\images\logo.gif" />
+    <Content Include="Content\images\logo.jpg" />
+    <Content Include="Content\images\menu-left.gif" />
+    <Content Include="Content\images\menu-right.gif" />
+    <Content Include="Content\images\pa.gif" />
+    <Content Include="Content\images\pp.gif" />
+    <Content Include="Content\images\pp.png" />
+    <Content Include="Content\images\safe.gif" />
+    <Content Include="Content\images\submenua.png" />
+    <Content Include="Content\images\submenubj.png" />
+    <Content Include="Content\images\titbj.png" />
+    <Content Include="Content\images\today.gif" />
+    <Content Include="Content\images\tou1.png" />
+    <Content Include="Content\images\tou2.png" />
+    <Content Include="Content\images\user_all_bg.gif" />
+    <Content Include="Content\images\user_bottom_c.gif" />
+    <Content Include="Content\images\user_bottom_l.gif" />
+    <Content Include="Content\images\user_bottom_r.gif" />
+    <Content Include="Content\images\user_botton.gif" />
+    <Content Include="Content\images\User_Login.css" />
+    <Content Include="Content\images\user_login_name.gif" />
+    <Content Include="Content\images\user_login_password.gif" />
+    <Content Include="Content\images\user_login_validatecode.gif" />
+    <Content Include="Content\images\user_main_c.gif" />
+    <Content Include="Content\images\user_main_l.gif" />
+    <Content Include="Content\images\user_main_r.gif" />
+    <Content Include="Content\images\user_top_c.gif" />
+    <Content Include="Content\images\user_top_l.gif" />
+    <Content Include="Content\images\user_top_r.gif" />
+    <Content Include="Content\images\xtree.css" />
+    <Content Include="Content\numimg\00.jpg" />
+    <Content Include="Content\numimg\01.jpg" />
+    <Content Include="Content\numimg\02.jpg" />
+    <Content Include="Content\numimg\03.jpg" />
+    <Content Include="Content\numimg\04.jpg" />
+    <Content Include="Content\numimg\05.jpg" />
+    <Content Include="Content\numimg\06.jpg" />
+    <Content Include="Content\numimg\07.jpg" />
+    <Content Include="Content\numimg\08.jpg" />
+    <Content Include="Content\numimg\09.jpg" />
+    <Content Include="Content\numimg\1.jpg" />
+    <Content Include="Content\numimg\10.jpg" />
+    <Content Include="Content\numimg\11.jpg" />
+    <Content Include="Content\numimg\12.jpg" />
+    <Content Include="Content\numimg\13.jpg" />
+    <Content Include="Content\numimg\14.jpg" />
+    <Content Include="Content\numimg\15.jpg" />
+    <Content Include="Content\numimg\16.jpg" />
+    <Content Include="Content\numimg\17.jpg" />
+    <Content Include="Content\numimg\18.jpg" />
+    <Content Include="Content\numimg\19.jpg" />
+    <Content Include="Content\numimg\2.jpg" />
+    <Content Include="Content\numimg\20.jpg" />
+    <Content Include="Content\numimg\21.jpg" />
+    <Content Include="Content\numimg\22.jpg" />
+    <Content Include="Content\numimg\23.jpg" />
+    <Content Include="Content\numimg\24.jpg" />
+    <Content Include="Content\numimg\25.jpg" />
+    <Content Include="Content\numimg\26.jpg" />
+    <Content Include="Content\numimg\27.jpg" />
+    <Content Include="Content\numimg\3.jpg" />
+    <Content Include="Content\numimg\4.jpg" />
+    <Content Include="Content\numimg\5.jpg" />
+    <Content Include="Content\numimg\6.jpg" />
+    <Content Include="Content\numimg\7.jpg" />
+    <Content Include="Content\numimg\8.jpg" />
+    <Content Include="Content\numimg\9.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="AspxCheck.aspx" />
+    <Content Include="Views\Admin\GameEdit.aspx" />
+    <Content Include="Views\Admin\GameEdit2.aspx" />
+    <Content Include="Views\Admin\GameInfo.aspx" />
+    <Content Include="Views\Admin\Index.aspx" />
+    <Content Include="Views\Admin\Login.aspx" />
+    <Content Include="Views\CommControl\GameList.ascx" />
+    <Content Include="Views\CommControl\VUC_HCPager.ascx" />
+    <Content Include="Views\CommControl\VUC_TopHead.ascx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\CommControl\VUC_Test.ascx" />
+    <Content Include="Views\Home\Play.aspx" />
+    <Content Include="Views\Member\Index.aspx" />
+    <Content Include="Views\Member\Login.aspx" />
+    <Content Include="Views\Member\Register.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Guess.Common\Guess.Common.csproj">
+      <Project>{1912B989-EAC3-40F2-A308-9E8C856F1040}</Project>
+      <Name>Guess.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guess.DataBase\Guess.DataBase.csproj">
+      <Project>{B3D285C1-7D81-40B1-98B8-006B8203F086}</Project>
+      <Name>Guess.DataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Guess.Model\Guess.Model.csproj">
+      <Project>{45BDD074-72DC-4202-B3AC-9C54C32D6B17}</Project>
+      <Name>Guess.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\images\Thumbs.db" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8088</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

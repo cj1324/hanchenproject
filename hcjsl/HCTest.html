@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE>测试</TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <style type="text/css" >
+  .cdiv{ border: 1px solid red;}
+  .bgblue{background-color:blue;color:red;}
+  </style>
+  <script type="text/javascript" src="testhelper.js" ></script>
+  <script type="text/javascript" src="hcjsl10.js" ></script>
+  <script type="text/javascript" >
+  HC.ready(function(){
+   var txt=  HC.getByClass("cdiv").setHtml("我是HTML").getHtml();
+  // alert(txt);
+  
+  });
+
+  HC.ready(function(){
+ //alert('22222');
+   HC.getById("testdiv").bind("click",function(){alert("xxxx")}).click(function(){alert("yyyyyyyy")}).mouseover(function(){alert("mouseover")}).mouseout(function(){alert("mouseout")}).setHtml("我过了...."); 
+// HC.keyup(function(e){alert(e.keyCode+"   Ctrl:"+e.ctrlKey+"  Alt:"+e.altKey)}); 
+   var tdom=  HC.getByTag("div");
+   // Print(tdom);
+     //   tdom.each(function(){
+     //   this.hide();
+     //   })
+   // Print(HC);
+    tdom.append("nulldiv"); 
+  });
+
+  </script>
+ </HEAD>
+
+ <BODY>
+ <div id="testdiv" class="cdiv" > id=testdiv  class=cdiv</div>
+ <div class="cdiv" >div2  class=cdiv</div>
+ <div class="bgblue" > background-color=blue</div><span>x</span><div id="nulldiv">null</div>
+ <span></span>
+ </BODY>
+ <script type='text/javascript' >
+//main();
+ </script>
+</HTML>

@@ -1,0 +1,95 @@
+模仿网做一个
+
+会员系统
+    页面
+        1.注册
+        2.登录
+        3.信息显示页
+            用户和积分信息
+            登录时间和IP
+            积分变化
+            礼品兑换信息
+            最近参加的竞猜(第二版,待开发)    
+        4.找回密码
+        5.个人资料修改(第二版)
+
+    数据库设计
+    1.会员信息表(T_Member)
+        表标示ID        F_Id            int 
+        邮箱*           F_Email         nvarchar 50
+        密码*           F_PassWord      nvarchar 50
+        性别*           F_Set           bit
+        昵称*           F_NickName      nvarchar 20
+        头像            F_HeadPic       nvarchar 200
+        2级密码*        F_SecurityPassWord nvarchar 50
+        支付宝          F_Alipay        nvarchar    30
+
+        提示问题        F_Issues        nvarchar    50
+        问题答案        F_Answer        nvarchar    50
+        初始密码        F_InitPassWord  nvarchar 50
+        等级称号(外键)  F_Level         int 
+        金币            F_Gold          int     default(100)  
+        钻石            F_Diamond       int     default(0)
+        VIP用户         F_VIP           bit     default(0)
+        邮箱认准KEY     F_KEY           nvarchar    50     
+        状态            F_Status        int     default(0)
+        创建时间        F_CreateDate    datetime default(getdate())
+        
+        PS:  "*"表示注册时需要填写
+
+    2.积分对应称号表(T_Level)
+        表标示ID*       F_Id            int
+        称号名*         F_Name          nvarchar    50
+        备注            F_Memo          nvarchar    200
+        创建时间        F_CreateDate    datatime    default(getdate())
+    
+    3.操作日志表(T_Operation)
+        表标示ID*       F_Id            int
+        会员ID          F_UId           int
+        日志内容        F_Content       nvarchar    50
+        操作IP          F_IP            nvarchar    20
+        记录时间        F_Time          datetime
+
+     
+    4.积分(金币,钻石)变化表
+        表标示ID        F_Id            int
+        会员ID          F_UId           int
+        变化币种类型    F_Type          int
+        变化数量        F_Num           int
+        变化备注        F_Memo          nvarchar    50
+        变化时间        F_CreateDate    datetime    
+
+    
+
+竞猜系统(核心)
+游戏类型
+游戏信息表
+游戏参与表
+
+
+
+
+
+
+兑换系统(开发个空壳即可)
+1.积分兑换礼品
+2.积分卡兑换积分
+3.秒杀领取积分卡
+
+
+新闻系统(从简)
+1.站内公告
+2.网站底部链接
+3.站内新闻
+
+
+简易BBS系统
+1.帖子发表
+2.帖子列表
+3.帖子回复(二版,待开发)
+
+
+广告和推广,奖励系统(二版,待开发)
+
+社区系统
+搞个NT论坛即可

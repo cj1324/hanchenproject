@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>提交计算数据</title>
+    <style type="text/css">
+        body{text-algin:center; margin:0px; padding:0px;}
+        #content{ width:500px;margin:20px auto 0px auto; padding:0px;border:1px dotted blue;}
+        textarea{width:500px; height:200px;,border:1px solid green;}
+        #btn_submit{width:80px; height:30px; margin-left:380px;}
+        #msg{color:red; width:100%;text-align:center;}
+        #htitle{font-size:14px; width:100% padding-left:10px;}
+    </style>
+</head>
+<body>
+    <div id="content" >
+        <div id="htitle">
+            请输入您要统计的字符串（仅包含字母!）
+        </div>
+        <textarea onchange="checkinput()" id="txt_input" name="txt_input" onkeypress="checkinput()" onblur="checkinput()"></textarea>
+        <div id="msg"  >
+        </div>
+        <input type="BUTTON" value="提交" id="btn_submit" name="btn_submit" onclick="submitfun()" />
+    </div>
+    <form action="" method="POST">
+        <input type="hidden" value="" id="txt_value" name="txt_value" />
+    </form>
+    <script type="text/javascript" >
+        //获取dom对象 
+        function $(id)
+        {
+           return  document.getElementById(id);
+        }
+
+        //获取表单内对象的value值
+        function val(id)
+        {
+            return $(id).value;
+        }
+
+        //提交表单处理
+        function submitfun()
+        {
+            if(isatoz(val('txt_input')))
+            {
+                $('txt_value').value=val('txt_input');
+                $("msg").innerHTML="表单提交成功。请稍等。。。";
+                document.forms[0].submit();
+                $("btn_submit").disabled="disabled";
+                $("btn_submit").value="处理中";
+            }
+            else
+            {
+               $("msg").innerHTML= "字符串不符合格式要求！,无法提交表单!";
+            }
+        }
+
+        //检查表单数据
+        function checkinput()
+        {
+            if(isatoz(val("txt_input")))
+            {
+                $("btn_submit").disabled="";
+            }
+            else
+            {
+                 $("btn_submit").disabled="disabled";
+
+            }
+
+        }
+        
+        //数据验证方法
+        function isatoz(str)
+        {
+            if(str==="")
+            {
+                $("msg").innerHTML="字符串不能为空！,否则无法提交";
+                return false;
+            }
+            var re=/^[a-zA-Z\r\n]*$/g
+            if(!re.test(str))
+            {
+                $("msg").innerHTML="请输入纯字母！,否则无法提交";
+                return false;
+            }
+            else{
+                $("msg").innerHTML="";
+            }
+            return true;
+        }
+    </script>
+    
+</body>
+</html>

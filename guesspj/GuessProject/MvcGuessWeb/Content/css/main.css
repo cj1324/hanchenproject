@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* CSS Document */
+
+#header,#content1,#bottom{width:900px;margin:0 auto;clear:both;}
+
+/*登陆*/
+.loginbar{line-height:30px;padding:0 10px;}
+	.login a{margin-left:5px;}
+	.login strong a{color:#D43601}
+	
+	.loginbar ul a{display:inline;text-align:center;margin:0 10px;}
+
+/*菜单*/
+.menubar{width:678px;height:50px;background:url(../images/bj.png) repeat-x;line-height:50px;}
+	.menu{height:50px;line-height:50px;text-align:center;background:url(../images/bj.png) repeat-x;position:relative;}
+	.menu li a{color:#F2F9D4;font-size:14px;}
+	.menu li a:hover{color:#fff;}
+
+	.menu li{display:block;float:left;width:99px;height:50px;overflow:hidden;background:url(../images/bj.png) no-repeat -203px right;}
+	.menu li:hover{font-weight:bold;overflow:visible;height:auto;}
+	.menu li:hover dl{width:663px;background:url(../images/submenubj.png) no-repeat;position:absolute;top:33px;left:-45px;padding-left:10px;height:28px;line-height:28px;overflow:hidden;overflow:hidden;}
+
+	/*下拉菜单效果*/
+	.menu dd{display:block;float:left;color:#fff;display:block;width:65px;height:27px;text-align:center;font-weight:normal;background:url(../images/line1.png) no-repeat 0 right;}
+	.menu dd:hover{height:28px;line-height:28px;}
+	.menu dd a{color:#762704;font-size:12px;display:block;width:63px;float:left;text-align:center;}
+	.menu dd a:hover{color:#fff;background:url(../images/submenua.png) no-repeat;}
+	
+	/*当前页面文字效果*/
+	.menu dd.current{background:url(../images/submenua.png) no-repeat;display:block;float:left;width:63px;}
+	.menu dd.current a{color:#fff}
+	.menu b{color:#fff;font-size:14px;}
+	
+	
+/*----------首页css-----------*/	
+.bulletin{width:250px;text-align:left;}
+	.bulletin h3{height:32px;line-height:32px;background:url(../images/homebj.png) no-repeat;text-indent:10px;}
+	.bulletin dl{border:1px solid #ddd;border-top:none;line-height:24px;text-indent:14px;height:176px;overflow:hidden;padding:10px 0 0 12px;}
+	.bulletin dd{background:url(../images/jt2.png) no-repeat;}
+	
+	/*更多1*/
+	.hot-award .tit1 a,.hot-game .tit1 a{float:right;margin-top:19px;margin-right:17px;color:#D43601;background:url(../images/homebj.png) 0 -34px;width:45px;height:17px;display:block;line-height:17px;text-indent:6px;}
+	/*更多2*/
+	.more2{float:right;color:#D43601;background:url(../images/homebj.png) 0 -34px;width:45px;height:17px;display:block;line-height:17px;text-indent:6px;font-size:12px;font-weight:normal;margin:7px 15px 0 0;}
+	
+		
+/*热门奖品+热门游戏*/
+.hot-award .tit1{background:url(../images/titbj.png) no-repeat;height:44px;text-align:left;}
+	.hot-award .layout{border:1px solid #ddd;height:190px;border-top:none;padding:10px 10px 0 10px;}
+	.hot-award dl{float:left;padding-left:20px;padding-right:20px;}
+	.hot-award dt{margin-bottom:7px;}
+	
+	.hot-award strong{display:block;color:#D43601}
+	
+.hot-game .tit1{background:url(../images/titbj.png) no-repeat 0 -48px;height:44px;text-align:left;}
+	.hot-game .layout{border:1px solid #ddd;height:90px;border-top:none;padding:10px 10px 0 10px}
+
+/*今日盈利*/
+.home-content-left{width:246px;margin-right:10px;text-align:left;}
+	.home-content-left h3{background:url(../images/homebj.png) no-repeat 0 -53px;height:32px;line-height:32px;text-indent:11px;}
+	
+	.home-content-left .today{height:300px;border:1px solid #ddd;border-top:none;padding-top:9px;background:url(../images/today.gif) no-repeat;line-height:30px;padding-left:33px;}
+	.home-content-left dl{width:179px;float:left;}
+	.home-content-left dt{width:80px;float:left;}
+	.home-content-left dd{font-weight:bold;color:#F76A00;float:right;}
+
+/*兑奖*/
+.home-content-center{width:384px;text-align:left;}
+	.home-content-center h3{background:url(../images/homebj.png) no-repeat 0 -87px;height:32px;line-height:32px;text-indent:30px;color:#fff;}
+	
+	.home-content-center .award{border:1px solid #F59D7F;height:302px;padding:7px 0 0 17px;}
+	.award dl{color:#D43601;font-weight:bold;background:url(../images/line3.gif) no-repeat bottom 0;height:20px;}
+	.award dl dt{float:left;display:block;width:239px;}
+	
+	.award ul{border-bottom:1px dashed #ccc;width:345px;height:65px;padding:5px 5px 0 5px;line-height:65px;}
+	.award img{display:block;float:left}
+	.award .home-id{margin-left:60px;}
+
+/*活动+社区*/
+.home-content-right{width:250px;text-align:left;}
+	.home-content-right1 .bulletin dl{height:156px;padding:4px 0 0 12px;}
+	.home-content-right2 .bulletin dl{height:100px;padding:7px 0 0 12px;}
+	
+	
+/*合作伙伴*/
+.cop{height:55px;background:url(../images/copbj.gif) no-repeat;padding:37px 5px 0 5px;}
+	
+	
+	
+/*-------游戏中心页面开始------*/
+/*游戏列表*/
+.content1-left{width:690px;overflow:hidden;}
+	.menu2 {height:32px;line-height:32px;}
+	.menu2 ul{width:300px;}
+	.menu2 li{float:left;display:block;width:92px;font-size:14px;margin-right:4px;}
+	.menu2 li a{float:left;display:block;width:92px;height:32px;background:url(../images/bj.png) no-repeat -93px -51px;}
+	.menu2 li a:hover{background-position:0 -51px;color:#fff;}
+	
+	.menu2 li.current a{float:left;display:block;width:92px;height:32px;background:url(../images/bj.png) no-repeat 0 -51px;color:#fff;}
+	
+	/*开奖时间*/
+	.hottime{height:32px;width:300px;color:#000;text-align:right;margin-right:10px;}
+	.hottime strong{font-size:25px;color:#c00;margin-right:5px;}
+	
+	/*列表内容*/
+	.content1-left-centent{border:solid #E23A01;line-height:33px;border-width:3px 3px 3px 3px;}/*这里很奇怪 在火狐里它不能自动撑高*/
+	.content1-left-centent .tit{height:30px;line-height:30px;background:url(../images/bj.png) repeat-x 0 -85px;color:#fff;font-weight:bold;clear:both;}
+	.content1-left-centent .tit li{display:inline;background:url(../images/line2.png) no-repeat 0 right;}
+	
+	/*标题宽度设置*/
+	.qs,.number1{width:72px;display:block;float:left;}
+	.sj,.number2{width:92px;display:block;float:left;}
+	.jg,.number3{width:137px;display:block;float:left;}
+	.jc,.number4{width:105px;display:block;float:left;}
+	.tze,.number5{width:92px;display:block;float:left;font-weight:normal;}
+	.wd,.number6{width:103px;display:block;float:left;font-weight:normal;}
+	.cys,.number7{width:83px;display:block;float:left;}
+	
+	.jcbg{background:url(../images/fire.png) no-repeat 0 right;}
+	.tzebg{background:url(../images/pp.png) no-repeat 0 right;}
+	.wdbg{background:url(../images/fire.png) no-repeat 0 right;}
+	
+	.content1-left-centent .layout li{border:1px solid #E23A01;border-top:none;border-left:none;}
+	.content1-left-centent .layout .number7 li{border-right:none;}
+	.content1-left-centent .layout{height:385px;}/*数据内容高度*/
+	
+	/*火背景*/
+	.number4 li,.number6 li{background:url(../images/fire.png) no-repeat 0 right;padding-right:25px;text-align:right;}
+	.number4,.number6{color:#333;font-weight:bold;font-size:14px;}
+	
+	.number5{color:#c00;font-weight:bold;}
+	.number5 span{color:#666;}
+	
+	
+	
+	/*投注css*/
+	.number7{color:#333;text-align:left;font-weight:bold;text-indent:14px;}
+	.number7 li a{color:#000;font-weight:normal;text-indent:30px;background:url(../images/tou1.png) no-repeat;height:33px;display:block;color:#fff;width:73px;}
+	.number7 li a:hover{background:url(../images/tou2.png) no-repeat;color:#fff;}
+	
+	
+	
+	/*翻页css*/
+	.page{margin-right:10px;margin-top:10px;height:17px;line-height:16px;}
+	.page dd{font-family:verdana;height:15px;display:block;float:left;margin-right:3px;}
+	.page dd a{display:block;float:left;height:15px;width:14px;border:1px solid #cdcbcb;color:#D43601;}
+	.page dd a:hover{border:none;background:url(../images/bj.png) 0 -216px no-repeat;color:#fff;display:block;width:16px;height:17px;}
+	
+	.page .start{display:block;height:17px;width:16px;float:left;background:url(../images/bj.png) 0 -216px no-repeat;color:#fff;}
+	
+	.page .last a{display:block;float:left;width:54px;height:16px;line-height:18px;}
+	.page .last a:hover{display:block;float:left;width:56px;height:18px;background:url(../images/bj.png) -19px -216px no-repeat;color:#fff;}
+	
+	.page .all a{display:block;float:left;width:19px;height:14px;}
+	.page .all a:hover{display:block;float:left;width:21px;height:17px;background:url(../images/bj.png) -76px -216px no-repeat;color:#fff;}
+	
+	
+	
+/*右边信息辅助区*/
+.content1-right{width:200px;text-align:left;}
+	.content1-right .layout .tit{height:31px;line-height:31px;text-align:left;text-indent:12px;background:url(../images/bj.png) no-repeat 0 -117px;}
+	.content1-right .layout .tit strong{position:relative;color:#fff;width:150px;}
+	.content1-right .layout .tit span{position:absolute;color:#D43601;top:-10px;left:-8px;width:150px;}
+	
+	.content1-right .layout ul{border:1px solid #ddd;border-top:none;padding:12px 12px 30px 12px;text-indent:8px;width:174px}
+	.content1-right .layout ul li a{display:block;background:url(../images/jt.png) no-repeat;height:24px;line-height:24px;}
+	.content1-right .layout ul li a:hover{background:url(../images/jta.png) no-repeat;}
+	
+	.content1-right .layout ul .more{float:right;}
+	.content1-right .layout ul .more a,.content1-right .layout ul .more a:hover{background:none;color:#D43601;}
+
+/*版权区*/
+.links{height:30px;background:url(../images/bj.png) repeat-x 0 -253px;line-height:32px;width:900px;}
+	.links ul{color:#ccc;font-size:9px;margin-left:30px;}
+	.links ul a{font-size:12px;padding:0 10px;}	
+	
+	.links dd{float:left;margin:8px 37px 0 0;}
+	
+.copyright{width:650px;margin-top:10px;padding-left:250px;}

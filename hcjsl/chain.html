@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"  />
+<title>链式例子</title>
+<script type="text/javascript" src="testhelper.js" ></script>
+<script type="text/javascript" title="普通OOP操作" >
+function Person(name,age,job)
+{
+//具有3个字段
+this._name=name||"";
+this._age=age||0;
+this._job=job||"";
+
+//3个字段封装属性
+this.setName=function(name)
+{
+    this._name=name||0;
+}
+
+this.getName=function()
+{
+   return  this._name;
+}
+
+this.setAge=function(age)
+{
+   this._age=age||0;
+}
+
+this.getAge=function()
+{
+    return this._age;
+}
+
+this.setJob=function(job)
+{
+    this._job=job||"";
+}
+this.getJob=function()
+{
+   return this._job;
+}
+
+this.hello=function()
+{
+ var hellostr="我的名字是:"+this._name.toString();
+ hellostr+="\n年龄："+this._age.toString();
+ hellostr+="\n工作是："+this._job.toString()
+ alert(hellostr);
+}
+
+}
+
+</script>
+
+<script type="text/javascript" title="链式调用">
+var NS=NS||{};
+NS.Person=function(name,age,job)
+{
+//具有3个字段
+this._name=name||"";
+this._age=age||0;
+this._job=job||"";
+
+//3个这段封装属性
+this.setName=function(name)
+{
+    this._name=name||"";
+    return this;
+}
+//传入需要继续调用的方法和参数 进行继续的调用，本身返回需要的数据
+this.getName=function(fun,arg)
+{
+    if(!!fun)
+    {
+        fun.call(this,arg);
+    }
+   return  this._name;
+}
+
+this.setAge=function(age)
+{
+   this._age=age||0;
+   return this;
+}
+
+this.getAge=function()
+{
+    return this._age;
+}
+
+this.setJob=function(job)
+{
+    this._job=job||"";
+    return this;
+}
+//通过回调函数的形式进行返回值操作，本身继续返回this对象
+this.getJob=function(fun)
+{
+    if(!!fun)
+    {
+        fun.call(this,this._job);
+    }
+    return this;
+}
+
+this.hello=function()
+{
+ var hellostr="我的名字是:"+this._name.toString();
+ hellostr+="\n年龄："+this._age.toString();
+ hellostr+="\n工作是："+this._job.toString()
+ alert(hellostr);
+ return this;
+}
+
+}
+</script>
+
+</head>
+<body>
+<div>简单JS解释器(请配合源码查看)：</div>
+<textarea id="jsstr" cols="100" rows="20" name="jsstr" >
+var pp=new Person("NAME",1,"JOB");
+Print(pp); //Debug输出对象属性信息
+//pp.hello()
+
+var p=new NS.Person("N",1,"J").setName("__NAME__");
+var name=p.getName(p.setName,"NewName");
+alert(name);
+p.hello()
+</textarea><br/>
+<input type="button" id="btn_eval" onclick="eval(document.getElementById('jsstr').value)" value="eval" />
+</body>
+</html>
+

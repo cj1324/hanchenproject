@@ -1,0 +1,60 @@
+{%load my_filter %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>图片信息处理</title>
+    <style type="text/css">
+        body{text-align:center;margin:0px;padding:0px;}
+        #div_up{width:500px; margin:20px auto 0px auto; padding:10px;border:1px dotted blue;}
+        #div_info{width:500px; margin:20px auto 0px auto; padding:10px;border:1px dotted blue;}
+        #img_info{font-size:14px;}
+        span{color;red;}
+
+        #msg{color:red; width:100%;text-align:center;}
+        #htitle{font-size:14px; width:100% padding-left:10px;}
+    </style>
+    <script type="text/javascript">
+        function $(str)
+        {
+           return  document.getElementById(str);
+        }
+    </script>
+</head>
+<body>
+    {{ msg_text }}
+    <div id="div_up">
+        <form action="" method="POST" enctype="multipart/form-data"  style=" display:block;" >
+            <div id="htitle" >
+                请选择要上传的图片!
+            </div>
+            <input type="FILE" id="fi_input" name="fi_input" />
+            <div id="msg" ></div>
+            <input type="SUBMIT" value="上传图片" />
+        </form>
+    </div>
+    <div id="div_info" style="display:{{ visb }};" >
+        {% if info  %}
+        <div "img_info" >
+                <img src="{{ info|val:'urlpath' }}" id="img_dom" alt="upload" />
+                <br/>
+            您上传的图片信息如下<br/>
+            服务器路径:<span id="img_path">{{ info|val:'diskpath' }} </span><br/>
+            PIL 获取宽度*高度:<span id="img_width" >{{ info|val:'width' }} </span>px * <span id="img_height">{{ info|val:'height' }} </span>px<br/>
+            <div id="jsbil" >
+            </div>
+            <script type="text/javascript">
+                jsimg=new Image();
+                jsimg.src="{{ info|val:'urlpath' }}";
+
+                jsimg.onload=function()
+                {
+                   $("jsbil").innerHTML=" JS W&H :   "+jsimg.width+" px  *  "+jsimg.height+" px ";
+                }
+            </script>
+            <br/>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
