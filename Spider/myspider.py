@@ -42,7 +42,7 @@ def argsper(): #进行参数的转换处理
     global options
     (options, args) = parser.parse_args()
 #}}}
-    
+
 #{{{ 初始化 和配置日志logging模块
 def logconf(): #创建日志对象
     """

@@ -1,7 +1,7 @@
 ﻿
 //寒晨的JavaScript类库  UTF-8+编码
 (function(w,d,n,_ver){
-w.HC=w.HC||{
+ w._ = w.HC = w.HC||{
 	ver:_ver,  //库版本信息
     length:0,
     constructor:_ver.name,
