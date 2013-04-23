@@ -283,7 +283,7 @@ def main(): #入口函数
         for th in threads:
             th.join()
         entime=datetime.datetime.now()
-        span=(sttime-entime).seconds
+        span=(entime - sttime).seconds
         logging.info(u"程序运行时间为%d秒,共采集%d个页面,成功插入%d条数据"%(span,len(fetchlist),insertcount))
         exit()
     else:
