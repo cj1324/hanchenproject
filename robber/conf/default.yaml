@@ -1,0 +1,39 @@
+root:
+  engine:
+    site_list:  # 如果存在collect配置
+      - http://www.example.com
+      - http://www.demo.com
+    debug: 3  # 调试级别
+    sock: '/tmp/robber.sock'  # rpyc性能分析网络监听
+    config: 'default'  # 这个配置文件名称 由程序产生
+
+  filters:  # 可用的过滤器列表,类似import的操作
+    - NullFilter  
+    - CustFilter
+    - Cust2Filter
+    - StorFilter
+    - Stor2Filter
+
+  collects:  # 简称收集器
+    NullCollect:  #默认存在的只是简单转化engine.site_list 
+      filter:  # 收集器可能还依赖过滤器
+        NullFilter:  # 通用的空过滤器,如果不需要过滤器,可用这个代替也可以直接不写filter
+    CustCollect:
+      parameters:
+        foo: bar
+      filters:
+        - CustFilter  # 这里用到的过滤器需要在filters 有先后顺序,如果依赖参数由collect提供
+        - Cust2Filter
+  storages:
+    NullStorage:  # 默认的存储器　一个可调用的抽象实现,代码中可能直接忽略
+    RedisStorage:  # 有过滤器 进行过滤后存储
+      parameters:
+        foo: bar   # 存储器的参数
+      filters:
+        - StorFilter
+        - Stor2Filter
+
+        
+
+
+
