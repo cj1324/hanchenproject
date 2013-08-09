@@ -39,8 +39,12 @@ def main():
     # 开始日志记录
     log = logging.getLogger('robber')
     log.debug('logging modules init ok.')
+
+    # 暂时不支持多个任务 只有默认配置中的root任务
+    assert(conf['root'])
+    root_conf = conf['root']
     try:
-        eng = Engine(conf)
+        eng = Engine(root_conf)
         log.debug('Engine modules init ok.')
     except Exception:
         traceback.print_exc()

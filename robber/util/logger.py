@@ -5,9 +5,12 @@
 import logging
 from logging.config import dictConfig
 
-LOG_FORMATTER = '[%(asctime)s] %(levelname)-8s %(name)s %(pathname)s %(funcName)s %(lineno)d %(process)d %(thread)d %(threadName)s: %(message)s'
+LOG_FORMATTER = '[%(asctime)s] %(levelname)-8s %(name)s %(pathname)s '\
+                '%(funcName)s %(lineno)d %(process)d %(thread)d '\
+                '%(threadName)s: %(message)s'
 SIMPLE_FORMATTER = '>> %(levelname)s %(message)s'
 DATE_FMT = '%Y-%m-%d %H:%M:%S'
+
 
 def parse_logger(conf):
     # TODO 根据配置和命令行参数控制日志
@@ -16,7 +19,7 @@ def parse_logger(conf):
                  'formatters': {'verbose': {'format': LOG_FORMATTER,
                                             'datefmt': DATE_FMT},
                                 'simple': {'format': SIMPLE_FORMATTER,
-                                            'datefmt': DATE_FMT}},
+                                           'datefmt': DATE_FMT}},
                  'handlers': {
                      'console': {'level': 'DEBUG',
                                  'class': 'logging.StreamHandler',
@@ -28,8 +31,10 @@ def parse_logger(conf):
                               'maxBytes': 10485760,
                               'backupCount': 9,
                               'formatter': 'verbose'}},
-                     'loggers': {'robber': {'handlers': ['console', 'file'],
-                                           'level': 'DEBUG'}}}
+                     'loggers': {'robber': {'handlers': ['console'],
+                                            'level': 'DEBUG'},
+                                 'robber.engine': {'handlers': [],
+                                                   'level': 'DEBUG'}}}
 
     dictConfig(conf_dict)
     return

@@ -77,10 +77,10 @@ ChangeLog
 * [X] 实现命令行参数处理
 * [X] 编写日志模块配置
 * [X] 配置文件结构定义和处理
-* [ ] 设计和编写engine部分代码
+* [X] 设计和编写filter部分demo代码
 * [ ] 设计和编写collect部分demo代码
 * [ ] 设计和编写storage部分demo代码
 * [ ] 设计和编写request部分demo代码
-* [ ] 设计和编写filter部分demo代码
+* [ ] 设计和编写engine部分代码
 * [ ] 第一阶段测试运行
 * [ ] 发布0.1版本

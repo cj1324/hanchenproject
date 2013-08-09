@@ -6,6 +6,7 @@ root:
     debug: 3  # 调试级别
     sock: '/tmp/robber.sock'  # rpyc性能分析网络监听
     config: 'default'  # 这个配置文件名称 由程序产生
+    queue_max_size: 256 # 队列的长度
 
   filters:  # 可用的过滤器列表,类似import的操作
     - NullFilter  
