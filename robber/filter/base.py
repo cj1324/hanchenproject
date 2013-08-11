@@ -59,6 +59,10 @@ class BaseFilter(object):
         # 假如需要配置是否被正确配置了
         self._configed = False
 
+        self._options = None
+
+        self._params = None
+
         # 校验通过的input变量
         self._input = None
 
@@ -71,8 +75,6 @@ class BaseFilter(object):
     def _verify(self, obj, obj_type):
         pass
 
-    def _auto_conver(self, obj):
-        pass
 
     @property
     def auto_convert(self):
@@ -90,13 +92,39 @@ class BaseFilter(object):
     def input_type(self):
         return self.__input_type
 
+    @property
+    def options(self):
+        if self.configed:
+            return self._options
+        # 未配置不允许读取
+        raise
+
+    @property
+    def params(self):
+        return self._params
+
     def config(self, option):
-        pass
+        if self._configed:
+            # 只允许配置一次
+            raise
+        self._options = option
+        self._configed = True
+
+    def update(self, params):
+        self._params = params
+
+    def input_convert(self, obj):
+        # TODO 第一个版本不实现这个功能
+        return obj
 
     def input(self, obj):
         pass
 
     def process(self):
+        if self.__need_config:
+            if not self._configed:
+                # 请先配置参数
+                raise
         self.run()
         self._processed = True
 
