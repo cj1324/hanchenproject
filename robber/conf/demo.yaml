@@ -17,14 +17,7 @@ root:
 
   collects:  # 简称收集器
     NullCollect:  #默认存在的只是简单转化engine.site_list 
-      filter:  # 收集器可能还依赖过滤器
-        NullFilter:  # 通用的空过滤器,如果不需要过滤器,可用这个代替也可以直接不写filter
-    CustCollect:
-      parameters:
-        foo: bar
-      filters:
-        - CustFilter  # 这里用到的过滤器需要在filters 有先后顺序,如果依赖参数由collect提供
-        - Cust2Filter
+
   storages:
     NullStorage:  # 默认的存储器　一个可调用的抽象实现,代码中可能直接忽略
     RedisStorage:  # 有过滤器 进行过滤后存储

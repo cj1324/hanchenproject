@@ -78,9 +78,11 @@ ChangeLog
 * [X] 编写日志模块配置
 * [X] 配置文件结构定义和处理
 * [X] 设计和编写filter部分demo代码
-* [ ] 设计和编写collect部分demo代码
-* [ ] 设计和编写storage部分demo代码
+* [X] 设计和编写collect部分demo代码
+* [X] 设计和编写CollectMange类
+* [X] 简单从yaml配置到queue走通
 * [ ] 设计和编写request部分demo代码
+* [ ] 设计和编写storage部分demo代码
 * [ ] 设计和编写engine部分代码
 * [ ] 第一阶段测试运行
 * [ ] 发布0.1版本

@@ -136,3 +136,5 @@ class BaseFilter(object):
     def output(self):
         if self._processed and self._verify(self._output, self.output_type):
             return self._output
+        else:
+          raise
