@@ -20,7 +20,11 @@ class Engine():
         if ready:
             self._init_queue()
             self._init_use_filters()
-            self.cm = CollectMange(self.g_conf['collects'],
+            self.cm = CollectManage(self.g_conf['collects'],
+                                   self.g_queue,
+                                   self.g_filters,
+                                   self.conf)
+            self.rm = RequestManage(self.g_conf['request'],
                                    self.g_queue,
                                    self.g_filters,
                                    self.conf)
@@ -43,7 +47,7 @@ class Engine():
 
 
 
-class CollectMange(object):
+class CollectManage(object):
     def __init__(self, conf, queue, filters, e_conf):
         self.log = logging.getLogger('robber.collect')
         self._conf = conf
@@ -118,3 +122,4 @@ class CollectMange(object):
     def process_daemon(self):
         raise NotImplementedError
 
+class RequestManage

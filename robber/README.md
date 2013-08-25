@@ -22,9 +22,9 @@
 
 * filter 过滤模块
 > 需要导入，有顺序要求，如果需要参数由调用方的收集或存储模块提供
-  * collect_filter 收集模块的过滤器
-  * storage_filter 存储模块的过滤器
-  * common_filter 通用的过滤器
+  * collect.filter 收集模块的过滤器
+  * storage.filter 存储模块的过滤器
+  * common.filter 通用的过滤器
 
 
 * engine 引擎模块
@@ -51,16 +51,23 @@
 * python2.7 
   * 废话
 
-* rpyc
-  * 性能分析
-  * 辅助调试
+* chardet
+  * 检测web页面编码
 
 * pyyaml
   * 配置文件格式 ,简单存储格式
   * 可读性比json好很多
 
-* unittest2
+* python-memcached (未启用)
+  * 连接memcache快速读写缓存
+
+* rpyc (未启用)
+  * 性能分析
+  * 辅助调试
+
+* unittest2 (未启用)
   * 进行自动化测试
+
 
 * 其他依赖根据配置模块决定
 
