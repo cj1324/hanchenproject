@@ -22,7 +22,7 @@ class RequestManage(object):
             rt = RequestThread(self.iqueue,
                                self.oqueue,
                                self.conf['thread_delay'])
-            rt.setDaemon()
+            rt.setDaemon(True)
             self.threads.append(rt)
         self.log.debug('RequestThread init requestthreads ok.')
 
