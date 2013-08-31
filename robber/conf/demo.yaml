@@ -8,6 +8,10 @@ root:
     config: 'default'  # 这个配置文件名称 由程序产生
     queue_max_size: 256 # 队列的长度
 
+  request:
+    thread_nums: 4  #允许并发的线程数
+    thread_delay: 2  #线程内请求的延时
+
   filters:  # 可用的过滤器列表,类似import的操作
     - NullFilter
     - CustFilter
