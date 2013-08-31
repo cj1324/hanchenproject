@@ -174,11 +174,8 @@ class Fetch(object):
             return urldata
         except HTTPError, e:
             self._http_error_fill_urldata(urldata, e)
-            return urldata
         except FetchException, e:
-            urldata.trycount -= 1
-            if urldata.trycount == 0:
-                urldata.errinfo = repr(e)
+            urldata.errinfo = repr(e)
         except URLError, e:
             traceback.print_exc()
             urldata.trycount = 0
