@@ -8,6 +8,7 @@ from util.basethread import BaseThread
 from request.fetch import Fetch
 import logging
 import time
+import traceback
 
 QUEUE_FULL_WAIT = 5
 
@@ -25,15 +26,19 @@ class RequestThread(BaseThread):
         self.fetch = Fetch()
 
     def process(self):
+        self.log.debug('requestthread process ..')
         while True:
             urldata = self.iqueue.get()
             self.log.debug('iqueue get url: %s' % urldata.url)
             while(urldata.trycount > 0):
                 try:
-                    self.fetch(urldata)
+                    self.fetch.request(urldata)
+                    self.log.debug('request url: %s' % urldata.url)
+                    break
                 except Exception:
                     urldata.trycount -= 1
-                    self.log.error('fetch url: %s' % urldata.url)
+                    traceback.print_exc()
+                    self.log.error('request error: %s' % urldata.url)
             self.iqueue.task_done()
             while (self.oqueue.full()):
                 self.log.warning('oquque is full, wait...')

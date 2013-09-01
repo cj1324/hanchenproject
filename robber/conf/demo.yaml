@@ -1,8 +1,8 @@
 root:
   engine:
     sites:  # 如果存在collect配置
-      - http://www.example.com
-      - http://www.demo.com
+      - http://www.baidu.com
+      - http://www.google.com
     debug: 3  # 调试级别
     sock: '/tmp/robber.sock'  # rpyc性能分析网络监听
     config: 'default'  # 这个配置文件名称 由程序产生

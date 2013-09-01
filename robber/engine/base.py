@@ -67,5 +67,11 @@ class Engine():
         self.process()
         # 系统工作，并等待结束通知
         while True:
-            self.log.debug('loop wait 30(s) ...')
-            time.sleep(30)
+            self.log.debug('loop wait 5(s) ...')
+            time.sleep(5)
+            u = self.output_queue.get()
+            from pprint import pprint
+            pprint(u.__dict__)
+            break
+
+

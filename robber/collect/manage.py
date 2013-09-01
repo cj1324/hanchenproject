@@ -66,12 +66,12 @@ class CollectManage(object):
         for u in urls:
             self.log.debug('queue put url: %s' % u.url)
             if u.url in self._history_urls:
+                self.log.debug('Ignore history already exists '
+                               'in the URL url:%s' % u.url)
+            else:
                 self.log.info('queue put url: %s' % u.url)
                 self._history_urls.append(u.url)
                 self._iqueue.put(u)
-            else:
-                self.log.debug('Ignore history already exists '
-                               'in the URL url:%s' % u.url)
 
     def process_common(self):
         """ 处理通用收集器逻辑 """
