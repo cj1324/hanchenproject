@@ -9,6 +9,8 @@ import time
 from Queue import Queue
 from request.manage import RequestManage
 from collect.manage import CollectManage
+from storage.manage import StorageMange
+#from pprint import pprint
 
 
 class Engine():
@@ -24,23 +26,26 @@ class Engine():
             self._init_use_filters()
             # 创建收集模块管理类
             self.cm = CollectManage(self.g_conf['collects'],
-                                    self.input_queue,
-                                    self.output_queue,
+                                    self.collect_queue,
                                     self.g_filters,
                                     self.conf)
 
             # 创建请求模块管理类
             self.rm = RequestManage(self.g_conf['request'],
-                                    self.input_queue,
-                                    self.output_queue)
+                                    self.collect_queue,
+                                    self.storage_queue)
+
+            # 存储器模块管理类
+            self.sm = StorageMange(self.g_conf['storages'],
+                                   self.storage_queue)
 
     def _init_queue(self):
         """ 初始化queue """
 
         self.log.debug('Queue init max_size:%d' % self.conf['queue_max_size'])
 
-        self.input_queue = Queue(self.conf['queue_max_size'])
-        self.output_queue = Queue(self.conf['queue_max_size'])
+        self.collect_queue = Queue(self.conf['queue_max_size'])
+        self.storage_queue = Queue(self.conf['queue_max_size'])
 
     def _init_use_filters(self):
         """ 初始化配置中全局导入的过滤器"""
@@ -59,6 +64,9 @@ class Engine():
         # 请求模块 开始工作
         self.rm.process()
 
+        # 存储模块 开始工作
+        self.sm.process()
+
     def check_stop(self):
         pass
 
@@ -69,9 +77,4 @@ class Engine():
         while True:
             self.log.debug('loop wait 5(s) ...')
             time.sleep(5)
-            u = self.output_queue.get()
-            from pprint import pprint
-            pprint(u.__dict__)
             break
-
-

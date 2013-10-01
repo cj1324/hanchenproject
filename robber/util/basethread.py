@@ -10,7 +10,6 @@ from threading import Event
 
 
 
-
 class BaseThread(Thread):
     """ 基础的线程类
         实现停止功能和日志记录
@@ -27,7 +26,7 @@ class BaseThread(Thread):
         self._ev_stop.set()
 
     def process(self):
-        """ 线程处理的核心方法 
+        """ 线程处理的核心方法
            注意：need_stop的check
         """
         raise NotImplementedError

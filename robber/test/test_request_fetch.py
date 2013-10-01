@@ -6,7 +6,7 @@
 import unittest
 from request.fetch import Fetch
 from model.urldata import UrlData
-from pprint import pprint
+#from pprint import pprint
 
 
 class TestFetchBaidu(unittest.TestCase):
@@ -26,6 +26,7 @@ class TestFetchBaidu(unittest.TestCase):
     def tearDown(self):
         pass
 
+
 class TestFetchSina(unittest.TestCase):
     """测试访问新浪的连通性 """
     def setUp(self):
@@ -42,6 +43,7 @@ class TestFetchSina(unittest.TestCase):
 
     def tearDown(self):
         pass
+
 
 class TestFetchSina404(unittest.TestCase):
     """测试访问新浪404页面触发 HTTPError """
@@ -60,6 +62,7 @@ class TestFetchSina404(unittest.TestCase):
     def tearDown(self):
         pass
 
+
 class TestFetchUnknow(unittest.TestCase):
     """测试访问GitHub500页面触发实际上 是200页面 """
     def setUp(self):
@@ -70,7 +73,7 @@ class TestFetchUnknow(unittest.TestCase):
         urld = UrlData(req_url)
         fet = Fetch()
         fet.request(urld)
-        self.assertEqual(urld.code , -1)
+        self.assertEqual(urld.code, -1)
         self.assertEqual(urld.trueurl, '')
         self.assertEqual(urld.msg, '')
 

@@ -33,7 +33,7 @@
 目录规划
 --------
 
-> 见``Directory.md`` 
+> 见``Directory.md``
 
 执行测试用例
 ------------
@@ -62,8 +62,8 @@ ChangeLog
 * [X] 设计和编写collect部分demo代码
 * [X] 设计和编写CollectMange类
 * [X] 简单从yaml配置到queue走通
-* [ ] 设计和编写request部分demo代码
-* [ ] 设计和编写storage部分demo代码
+* [X] 设计和编写request部分demo代码
+* [X] 设计和编写storage部分demo代码
 * [ ] 设计和编写engine部分代码
 * [ ] 第一阶段测试运行
 * [ ] 发布0.1版本

@@ -3,12 +3,12 @@
 """  爬虫请求线程实现
 """
 
-
-from util.basethread import BaseThread
-from request.fetch import Fetch
 import logging
 import time
 import traceback
+
+from util.basethread import BaseThread
+from request.fetch import Fetch
 
 QUEUE_FULL_WAIT = 5
 

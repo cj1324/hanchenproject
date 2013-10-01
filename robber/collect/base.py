@@ -3,12 +3,13 @@
 
 """ 入口收集模块默认情况是根据参数
 """
+
 from util.urltool import url_valid
+
 
 class COLLECT_TYPE(object):
     COMMON = 0  # 处理参数
     DAEMON = 1  # 守护独立运行
-    RESPONSE = 2  # 处理Response
 
 
 class BaseCollect(object):
@@ -37,9 +38,10 @@ class BaseCollect(object):
     def options(self):
         if self._configed:
             return self.__options
+
     @property
     def collect_type(self):
-      return self.__collect_type
+        return self.__collect_type
 
     def process(self):
         if self.__need_config:
@@ -52,7 +54,7 @@ class BaseCollect(object):
     def run(self):
         raise NotImplementedError
 
-    def url_valid(self,url):
+    def url_valid(self, url):
         if url_valid(url):
             return url
 
@@ -62,4 +64,3 @@ class BaseCollect(object):
         else:
             # 请先配置运行process
             raise
-

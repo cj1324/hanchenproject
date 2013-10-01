@@ -13,20 +13,11 @@ root:
     thread_delay: 2  #线程内请求的延时
 
   filters:  # 可用的过滤器列表,类似import的操作
-    - NullFilter
-    - CustFilter
-    - Cust2Filter
-    - StorFilter
-    - Stor2Filter
 
   collects:  # 简称收集器
     NullCollect:  #默认存在的只是简单转化engine.site_list 
 
   storages:
-    NullStorage:  # 默认的存储器　一个可调用的抽象实现,代码中可能直接忽略
     RedisStorage:  # 有过滤器 进行过滤后存储
       parameters:
-        foo: bar   # 存储器的参数
-      filters:
-        - StorFilter
-        - Stor2Filter
+        uri: bar   # 存储器的参数

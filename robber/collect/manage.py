@@ -9,13 +9,12 @@ from collect.base import COLLECT_TYPE
 
 
 class CollectManage(object):
-    def __init__(self, conf, iqueue, oqueue, filters, e_conf):
+    def __init__(self, conf, oqueue, filters, e_conf):
         self.log = logging.getLogger('robber.collect.manage')
         self._conf = conf
         self._e_conf = e_conf
         self._filters = filters
         self._history_urls = []
-        self._iqueue = iqueue
         self._oqueue = oqueue
         self._common_list = []
         self._daemon_list = []
@@ -41,10 +40,6 @@ class CollectManage(object):
                 self._daemon_list.append({'name': k,
                                           'cls': collect_cls,
                                           'config': self._config[k]})
-            if obj.collect_type == COLLECT_TYPE.RESPONSE:
-                self._response_list.append({'name': k,
-                                            'cls': collect_cls,
-                                            'config': self._config[k]})
             del obj
             self.log.debug('init collect: %s end' % (k))
 
@@ -71,7 +66,7 @@ class CollectManage(object):
             else:
                 self.log.info('queue put url: %s' % u.url)
                 self._history_urls.append(u.url)
-                self._iqueue.put(u)
+                self._oqueue.put(u)
 
     def process_common(self):
         """ 处理通用收集器逻辑 """
