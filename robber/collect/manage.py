@@ -18,7 +18,6 @@ class CollectManage(object):
         self._oqueue = oqueue
         self._common_list = []
         self._daemon_list = []
-        self._response_list = []
         self._init_list()
 
     def _init_list(self):
